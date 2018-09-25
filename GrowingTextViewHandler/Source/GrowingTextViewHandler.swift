@@ -53,7 +53,7 @@ open class GrowingTextViewHandler: NSObject {
 		}
 		let width = growingTextView.bounds.size.width - 2.0 * growingTextView.textContainer.lineFragmentPadding
 		let boundingRect = growingTextView.text.boundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude),
-		options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSFontAttributeName: textViewFont], context: nil)
+                                                             options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedStringKey.font: textViewFont], context: nil)
 		let heightByBoundingRect = boundingRect.height + textViewFont.lineHeight
 		return max(heightByBoundingRect, growingTextView.contentSize.height)
 	}
